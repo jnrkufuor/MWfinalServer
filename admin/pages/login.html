@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Locate Admin</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../js/lib/jquery-3.1.1.js"></script>
+        <style>
+            @font-face{
+                font-family:acme;
+                src: url(AdventPro-Regular.ttf);
+            }
+            @font-face{
+                font-family:archi;
+                src: url(Cuprum-Regular.ttf);
+            }
+            @font-face{
+                font-family:asul;
+                src: url(Cabin-Regular-TTF.ttf);
+            }
+            div{font-family:'archi'!important; text-align: center;}
+            p,span,a,button
+            {
+                font-family:'archi'!important; 
+                font-size: 15px!important;
+            }
+            a{
+                width: 100%!important;
+                background-color: royalblue!important;
+            }
+            button
+            {
+                background-color: royalblue!important;
+                color:white!important;
+            }
+            input,select
+            {
+                border-radius:15px!important;
+                background-color: white!important;
+                opacity: 1;
+                width: 100%!important;
+                font-size: 15px!important;
+                color: #ff9900; !important;
+                font-weight: 300;
+                font-family:'archi'!important;
+                margin-bottom: 3px!important;
+                padding-bottom: 1px !important;
+                padding-left: 1px !important;
+                box-shadow: 
+                    0px 1px 2px rgba(255, 153, 0, 0.7), 
+                    inset 0px 0px 2px rgba(255, 153, 0, 0.7);
+
+            }
+        </style>
+        <script>
+            jQuery(document).ready(function ($) {
+                $('.login').click(function (event) {
+                    event.preventDefault();
+                    var username=$('.username').val();
+                    var password= $('.pword').val();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://52.89.116.249/~ernest_kufuor/admin/ajax/adminAjax.php?cmd=1&password='+password+'&username='+username,
+                        error: function () {
+                            // alert('error, failed to get id');
+                        },
+                        dataType: 'json',
+                        success: function (response) {
+                            if(response.message=="false")
+                            {
+                               alert("Invalid Username/Password");
+                            }
+                            else
+                            {
+                                sessionStorage.user=response.USERNAME;
+                                sessionStorage.id=response.uid;
+                                sessionStorage.phone=response.phone;
+                                window.location="index.html";
+                               
+                            }
+                        },
+                    });
+                });
+            });
+            
+            
+        </script>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <br><br>
+
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Locate Admin Log In</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control username" placeholder="Username"  type="text" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control pword" placeholder="Password"  type="password" value="">
+                                    </div>
+
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <a href="" class="btn btn-lg btn-success login btn-block">Login</a>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../js/lib/jquery-3.1.1.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
+
+    </body>
+
+</html>

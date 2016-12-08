@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Locate Admin </title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Morris Charts CSS -->
+        <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <style>
+            @font-face{
+                font-family:acme;
+                src: url(AdventPro-Regular.ttf);
+            }
+            @font-face{
+                font-family:archi;
+                src: url(Cuprum-Regular.ttf);
+            }
+            @font-face{
+                font-family:asul;
+                src: url(Cabin-Regular-TTF.ttf);
+            }
+            div{font-family:'archi'!important; }
+            p,span,a,button
+            {
+                font-family:'archi'!important; 
+                font-size: 15px!important;
+            }
+            button
+            {
+                background-color: royalblue!important;
+                color:white!important;
+            }
+            input,select
+            {
+                border-radius:15px!important;
+                background-color: white!important;
+                opacity: 1;
+                width: 80%!important;
+                font-size: 15px!important;
+                color: #ff9900; !important;
+                font-weight: 300;
+                font-family:'archi'!important;
+                margin-bottom: 3px!important;
+                padding-bottom: 1px !important;
+                padding-left: 1px !important;
+                box-shadow: 
+                    0px 1px 2px rgba(255, 153, 0, 0.7), 
+                    inset 0px 0px 2px rgba(255, 153, 0, 0.7);
+
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                if( sessionStorage.id==null)
+                {
+                    window.location="login.html";
+                }
+            };
+            $(document).ready(
+                function() {
+                    $(".logout").click(function() {
+                        sessionStorage.clear();
+                        window.location="login.html";
+                    });
+                }
+            );
+        </script>
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html" style="font-size: 25px!important;">Locate v1.0</a>
+                </div>
+                <!-- /.navbar-header -->
+
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li class="logout"><a href=""><i class="fa fa-sign-out fa-fw "></i> Logout</a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+                <!-- /.navbar-top-links -->
+
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+
+                            <li>
+                                <a href="index.html" ><i class="fa fa-dashboard fa-fw" ></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="forms.html"><i class="fa fa-edit fa-fw" ></i> Add</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Dashboard</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-credit-card-alt fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge atm"></div>
+                                        <div>ATM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <a href="forms.html"> <span class="pull-left">Add New</span>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-cutlery fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge" food></div>
+                                        <div>Food</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <a href="forms.html"> <span class="pull-left"style="color:green  !important">Add New</span>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-h-square fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge hospital"></div>
+                                        <div>Hospitals</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <a href="forms.html"><span class="pull-left" style="color:orange  !important">Add New</span>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge store"></div>
+                                        <div>Store</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <a href="forms.html"><span class="pull-left" style="color:red  !important">Add New</span>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-primary"style=" border-color:RebeccaPurple !important" >
+                            <div class="panel-heading" style="background-color:RebeccaPurple  !important; ">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-graduation-cap fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge school"></div>
+                                        <div>Schools</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <a href="forms.html"><span class="pull-left" style="color:RebeccaPurple  !important">Add New</span>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>  <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-primary" style=" border-color:DarkSlateGrey  !important">
+                        <div class="panel-heading" style="background-color:DarkSlateGrey   !important; ">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-hotel fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge hotel"></div>
+                                    <div>Lodging</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <a href="forms.html"><span class="pull-left"style="color:DarkSlateGrey   !important">Add New</span> 
+                                </a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+<script src="../vendor/raphael/raphael.min.js"></script>
+<script src="../vendor/morrisjs/morris.min.js"></script>
+<script src="../data/morris-data.js"></script>
+<script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

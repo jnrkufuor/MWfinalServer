@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Locate</title>
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/materialize.min.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="font_awesome/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div id="splashPage" >
+			<div class="splash container">
+				<br><br><br><br><br><br><br><br><br><br><br>
+				<div >
+					<img class="s-logo"src="img/logo%20(2).png" width="140" height="140">
+				</div>
+				<br><br><br><br>
+				<p class="s-text">Welcome to Locate</p>
+				<p class="t-text">Locate PLaces Nearest To You In A Second</p>
+				<br>
+				<a href="#" class="s-btn" >Get Started </a>
+
+				<div class="signUp">
+					<p class="close"style="float:left;"> <i class="fa fa-close" style="float:left; margin-left:5px;color:black;" aria-hidden="true"></i> </p>
+					<p><a href="#" class="m-btn sign">Sign Up </a></p>
+					<p><a href="#" class="m-btn login"> Login </a></p>
+				</div> 
+				<div class="lgn">
+					<p class="close-l"style="float:left;"> <i class="fa fa-close" style="float:left; margin-left:5px;opacity:0.6;" aria-hidden="true"></i> </p>
+					<input type="text" id="log-name"placeholder="Username"/>
+					<input type="password" id="log-pword"placeholder="Password"/>
+					<br><br>
+					<p><a href="#" class="dne-login"> Done </a></p>
+				</div> 
+				<div class="add">
+					<p class="close-s"style="float:left;"> <i class="fa fa-close" style="float:left; margin-left:5px; opacity:0.6;" aria-hidden="true"></i> </p>
+					<input type="text" id="fname"placeholder="Firstname" required/>
+					<input type="text" id="lname"placeholder="Last Name" required/>
+					<input type="text" id="uname"placeholder="Username" required/>
+					<input type="password" id="pword"placeholder="Password" required/>
+					<input type="text" id="phone"placeholder="Phone Number" required/>
+					<br><br>
+					<p><a href="#" class="dne-sign"> Done </a></p>
+				</div>
+				<div id="snackbar"></div>
+			</div>
+			<div class="map-dashboard">
+				<div id="map">
+
+				</div>
+				<div class="bars"><i class="fa fa-ellipsis-v" style="padding-top:12px;"aria-hidden="true"></i></div>
+				<div class="lgout"><i class="fa fa-sign-out " style="padding-top:12px;padding-left:2px;"aria-hidden="true"></i></div>
+				<div class="directory"><i class="fa fa-book" style="padding-top:13px;padding-left:1px;"aria-hidden="true"></i></div>
+				<div class="reserv"><i class="fa fa-paper-plane" style="padding-top:14px;padding-right:2px"aria-hidden="true"></i></div>
+				<div class="message"><i class="fa fa-location-arrow" style="padding-top:12px;padding-right:2px"aria-hidden="true"></i></div>
+				<div class="search"><i class="fa fa-search" style="padding-top:12px;padding-right:2px"aria-hidden="true"></i></div>
+				<div class="searchbar"><input type="text" id="search" placeholder="Search" onchange="findAddress()"></div>
+				<div class="list">
+					<br>
+					<p class="listing">Directory</p>
+					<div style="">
+						<ul class="dir container">
+
+						</ul>
+					</div>
+				</div>
+				<div class="reservation">
+					<br>
+					<p class="listing">Book Hotel/Request ATM Card</p>
+					<p><a href="#" class="atm-btn ">ATM </a></p>
+					<p><a href="#" class="hotel-btn "> Hotel </a></p>
+				</div>
+				<div class="reservation-atm">
+					<p class="close-atm"style="float:left;"> <i class="fa fa-close" style="float:left; margin-left:5px;opacity:0.6;" aria-hidden="true"></i> </p>
+					<br>
+					<p class="listing">Request ATM Card</p>
+					<input type="text" id="bank"placeholder="Bank Name" required/>
+					<input type="text" id="branch"placeholder="Branch" required/>
+					<input type="text" id="accountName"placeholder="Account Name" required/>
+					<input type="text" id="accountNum"placeholder="Accoutn Number" required/> <br><br>
+					<p><a href="#" class="dne-atm"> Done </a></p>
+				</div>
+				<div class="reservation-hotel">
+					<p class="close-hotel"style="float:left;"> <i class="fa fa-close" style="float:left; margin-left:5px;opacity:0.6;" aria-hidden="true"></i> </p>
+					<br>
+					<p class="listing">Book A Room</p>
+					<input type="text" id="hotel-name"placeholder="Hotel Name" required/>
+					<input type="text" id="room"placeholder="Room Type" required/>
+					<input type="date" id="date"placeholder="Date" required/> <br><br>
+					<p><a href="#" class="dne-hotel"> Done </a></p>
+				</div>
+				<div id="snack"></div>
+				<div class="row map-row" style="text-align:center;">
+					<div class="col s2">
+						<p class="item visa"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></p>
+					</div>
+					<div class="col s2">
+						<p class="item school"><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+					</div>
+					<div class="col s2">
+						<p class="item food"><i class="fa fa-cutlery" aria-hidden="true"></i></p>
+					</div>
+					<div class="col s2">
+						<p class="item hospital"><i class="fa fa-h-square" aria-hidden="true"></i></p>
+					</div>
+					<div class="col s2">
+						<p class="item hotel"><i class="fa fa-hotel" aria-hidden="true"></i></p>
+					</div>
+					<div class="col s2">
+						<p class="item store"><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="js/materialize.min.js"></script>
+		<script src="https://use.fontawesome.com/e71a2dc69d.js"></script>
+		<script src="js/lib/jquery.js"></script>
+		<script src="js/app/app.js"></script>
+		<script src="js/app/bootstrap.js"></script>
+		<script src="js/myscript.js"></script>
+		<script type="text/javascript" src="js/cordova-android.js"></script>
+		<script async defer
+				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqzFNqMOFKzyeJguXJFIotMQxUKJhk9As&libraries=places&sensor=false">
+		</script>
+	</body>
+</html>
