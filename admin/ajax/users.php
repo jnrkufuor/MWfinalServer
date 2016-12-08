@@ -34,6 +34,14 @@ class users extends adb{
 						RATING='$rating'";
 		return $this->query($strQuery);				
 	}
+	function getLogs()
+	{
+		return $this->query("select id , activity , date from logs");
+	}
+	function getRequests()
+	{
+		return $this->query("select id , type , details,date from request");
+	}
 }
 
 

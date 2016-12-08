@@ -26,6 +26,23 @@ class users extends adb{
 	{
 		return $this->query("select name, type , latitude , longitude , vicinity , rating from feature where type='$type'");
 	}
+
+	function log($username,$activity)
+	{
+		$strQuery="insert into logs set
+						ID='$username',
+						ACTIVITY='$activity'";
+		return $this->query($strQuery);	
+	}
+
+	function logFeature($username,$type,$activity)
+	{
+		$strQuery="insert into request set
+						ID='$username',
+						TYPE='$type',
+						DETAILS='$activity'";
+		return $this->query($strQuery);	
+	}
 }
 
 

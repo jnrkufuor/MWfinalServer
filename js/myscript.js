@@ -223,6 +223,14 @@ $(document).ready(
    myFunction();
    clearOverlays();
    sessionStorage.clear();
+   $.ajax({
+      type: 'POST',
+      url: 'http://52.89.116.249/~ernest_kufuor/ajax/projectAjax.php?cmd=7&name='+sessionStorage.user,
+      error: function () {
+      },
+      success: function (html) {
+      },
+     });
   });
  }
 );
@@ -516,7 +524,7 @@ jQuery(document).ready(function ($) {
   }
   $.ajax({
    type: 'POST',
-   url: 'http://52.89.116.249/~ernest_kufuor/ajax/projectAjax.php?cmd=4&bank='+bank+'&branch='+branch+'&name='+aName+'&num='+aNum+'&phone='+sessionStorage.phone,
+   url: 'http://52.89.116.249/~ernest_kufuor/ajax/projectAjax.php?cmd=4&bank='+bank+'&branch='+branch+'&name='+aName+'&num='+aNum+'&phone='+sessionStorage.phone+'&name='+sessionStorage.user,
    error: function () {
     // alert('error, failed to get id');
    },
@@ -550,7 +558,7 @@ jQuery(document).ready(function ($) {
   }
   $.ajax({
    type: 'POST',
-   url: 'http://52.89.116.249/~ernest_kufuor/ajax/projectAjax.php?cmd=5&hotel='+bank+'&room='+branch+'&date='+aName+'&phone='+sessionStorage.phone,
+   url: 'http://52.89.116.249/~ernest_kufuor/ajax/projectAjax.php?cmd=5&hotel='+bank+'&room='+branch+'&date='+aName+'&phone='+sessionStorage.phone+'&name='+sessionStorage.user,
    error: function () {
     // alert('error, failed to get id');
    },

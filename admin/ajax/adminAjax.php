@@ -71,6 +71,57 @@ if ($_REQUEST['cmd']!=null)
             }
        
     }
+        else if($cmd==4)
+    {   
+        
+        $result=$obj->getLogs();
+        $num=$obj->fetch();
+        $pool = new users();
+        $result=$pool->getLogs();
+        if ($num==null)
+        {
+            header('Content-Type:application/json');
+            echo '{"result":0,"message":"No One Is In Your Pool Yet"}';
+        }
+        else
+        {
+            header('Content-Type:application/json');
+            $array=array(); 
+            while($one=$pool->fetch())
+            { 
+                $array[]=$one;  
+            }
+            echo json_encode($array);
+        }
+    
+       
+    }
+
+        else if($cmd==5)
+    {   
+        
+        $result=$obj->getRequests();
+        $num=$obj->fetch();
+        $pool = new users();
+        $result=$pool->getRequests();
+        if ($num==null)
+        {
+            header('Content-Type:application/json');
+            echo '{"result":0,"message":"No One Is In Your Pool Yet"}';
+        }
+        else
+        {
+            header('Content-Type:application/json');
+            $array=array(); 
+            while($one=$pool->fetch())
+            { 
+                $array[]=$one;  
+            }
+            echo json_encode($array);
+        }
+    
+       
+    }
    
 }
 ?>
